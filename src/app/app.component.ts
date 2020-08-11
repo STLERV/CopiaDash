@@ -27,6 +27,7 @@ export class AppComponent  {
 
   Autentificar() {
 
+    
     this.peticionesAPI.DameProfesor(this.nombre, this.apellido).subscribe(
       (res) => {
         if (res[0] !== undefined) {

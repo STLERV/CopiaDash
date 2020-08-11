@@ -105,7 +105,8 @@ export class JuegoComponent implements OnInit {
     {nombre: 'Juego De Competición', color: 'warn'},
     {nombre: 'Juego De Avatar', color: 'primary'},
     {nombre: 'Juego De Cuestionario', color: 'accent'},
-    {nombre: 'Juego De Geocaching', color: 'warn'}
+    {nombre: 'Juego De Geocaching', color: 'warn'},
+    {nombre: 'Juego De Cuentos', color: 'primary'}
   ];
   seleccionModoJuego: ChipColor[] = [
     {nombre: 'Individual', color: 'primary'},
@@ -180,20 +181,20 @@ export class JuegoComponent implements OnInit {
 
   // Informacion para juego de geocatching
 
-  escenario: Escenario;
-  tengoEscenario = false;
-  puntosgeolocalizablesEscenario: PuntoGeolocalizable[];
-  numeroDePuntosGeolocalizables: number;
+   escenario: Escenario;
+  // tengoEscenario = false;
+  // puntosgeolocalizablesEscenario: PuntoGeolocalizable[];
+  // numeroDePuntosGeolocalizables: number;
 
-  idescenario: number;
-  PreguntasBasicas: number[];
-  PreguntasBonus: number[];
-  tengoPreguntas = false;
+  // idescenario: number;
+  // PreguntasBasicas: number[];
+  // PreguntasBonus: number[];
+  // tengoPreguntas = false;
 
-  puntuacionCorrectaGeo: number;
-  puntuacionIncorrectaGeo: number;
-  puntuacionCorrectaGeoBonus: number;
-  puntuacionIncorrectaGeoBonus: number;
+  // puntuacionCorrectaGeo: number;
+  // puntuacionIncorrectaGeo: number;
+  // puntuacionCorrectaGeoBonus: number;
+  // puntuacionIncorrectaGeoBonus: number;
 
   final = false;
 
@@ -667,7 +668,10 @@ export class JuegoComponent implements OnInit {
     this.familiasElegidas = $event;
     this.tengoFamilias = true;
   }
+  CrearJuegoDeLibros(){
 
+    
+  }
 
   CrearJuegoDeAvatar( ) {
 
@@ -922,44 +926,44 @@ export class JuegoComponent implements OnInit {
   /// Funciones para craar juego de Geocatching
   // Geocaching
   AbrirDialogoAgregarEscenario(): void {
-    const dialogRef = this.dialog.open(AsignaEscenarioComponent, {
-      width: '70%',
-      height: '80%',
-      position: {
-        top: '0%'
-      },
-      // Pasamos los parametros necesarios
-      data: {
-        profesorId: this.profesorId
-      }
-    });
-    dialogRef.afterClosed().subscribe(() => {
-      this.escenario = this.sesion.DameEscenario();
+    // const dialogRef = this.dialog.open(AsignaEscenarioComponent, {
+    //   width: '70%',
+    //   height: '80%',
+    //   position: {
+    //     top: '0%'
+    //   },
+    //   // Pasamos los parametros necesarios
+    //   data: {
+    //     profesorId: this.profesorId
+    //   }
+    // });
+    // dialogRef.afterClosed().subscribe(() => {
+    //   this.escenario = this.sesion.DameEscenario();
 
-      console.log('ESCENARIO SELECCIONADO --->' + this.escenario.Mapa);
-      this.DamePuntosGeolocalizablesDelEscenario(this.escenario);
-      console.log(this.numeroDePuntosGeolocalizables);
-      console.log(this.puntosgeolocalizablesEscenario);
-    });
+    //   console.log('ESCENARIO SELECCIONADO --->' + this.escenario.Mapa);
+    //   this.DamePuntosGeolocalizablesDelEscenario(this.escenario);
+    //   console.log(this.numeroDePuntosGeolocalizables);
+    //   console.log(this.puntosgeolocalizablesEscenario);
+    // });
   }
 
   DamePuntosGeolocalizablesDelEscenario(escenario: Escenario) {
 
-    console.log('voy a mostrar los puntosgeolocalizables del escenario ' + escenario.id);
-    this.peticionesAPI.DamePuntosGeolocalizablesEscenario(escenario.id)
-    .subscribe(res => {
-      if (res[0] !== undefined) {
-        this.puntosgeolocalizablesEscenario = res;
-        console.log(res);
-        this.numeroDePuntosGeolocalizables = this.puntosgeolocalizablesEscenario.length;
-        console.log(this.numeroDePuntosGeolocalizables);
-        this.tengoEscenario = true;
-      } else {
-        console.log('No hay puntosgeolocalizables en el escenario');
-        this.puntosgeolocalizablesEscenario = undefined;
-        this.numeroDePuntosGeolocalizables = 0;
-      }
-    });
+    // console.log('voy a mostrar los puntosgeolocalizables del escenario ' + escenario.id);
+    // this.peticionesAPI.DamePuntosGeolocalizablesEscenario(escenario.id)
+    // .subscribe(res => {
+    //   if (res[0] !== undefined) {
+    //     this.puntosgeolocalizablesEscenario = res;
+    //     console.log(res);
+    //     this.numeroDePuntosGeolocalizables = this.puntosgeolocalizablesEscenario.length;
+    //     console.log(this.numeroDePuntosGeolocalizables);
+    //     this.tengoEscenario = true;
+    //   } else {
+    //     console.log('No hay puntosgeolocalizables en el escenario');
+    //     this.puntosgeolocalizablesEscenario = undefined;
+    //     this.numeroDePuntosGeolocalizables = 0;
+    //   }
+    // });
   }
 
   AbrirDialogoAgregarPreguntas(): void {
@@ -1133,7 +1137,7 @@ Limpiar() {
     this.escenario = undefined;
     this.tengoEscenario = false;
 
-    this.puntosgeolocalizablesEscenario = undefined;
+    // this.puntosgeolocalizablesEscenario = undefined;
     this.PreguntasBasicas = undefined;
     this.PreguntasBonus = undefined;
     this.tengoPreguntas = false;

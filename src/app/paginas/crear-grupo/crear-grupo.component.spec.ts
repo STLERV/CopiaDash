@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CrearGrupoComponent } from './crear-grupo.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('CrearGrupoComponent', () => {
   let component: CrearGrupoComponent;
@@ -19,7 +20,9 @@ describe('CrearGrupoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    it('should have name and description', () => {
+    
+
+          expect(component).toBeTruthy();
   });
 });
