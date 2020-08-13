@@ -19,7 +19,7 @@ import {  Nivel, Alumno, Equipo, Juego, JuegoDeCompeticion, Punto, TablaPuntosFo
 
           AlumnoJuegoDePuntos, EquipoJuegoDePuntos, Grupo, AlumnoJuegoDeCompeticionLiga,
           EquipoJuegoDeCompeticionLiga, Jornada, AlumnoJuegoDeCompeticionFormulaUno,
-          EquipoJuegoDeCompeticionFormulaUno, Cuestionario, JuegoDeAvatar, FamiliaAvatares,
+          EquipoJuegoDeCompeticionFormulaUno, Cuestionario, JuegoDeAvatar, JuegoDeLibros , FamiliaAvatares,
           AlumnoJuegoDeAvatar, AsignacionPuntosJuego, Coleccion, AlumnoJuegoDeColeccion,
           EquipoJuegoDeColeccion, Escenario, JuegoDeGeocaching, AlumnoJuegoDeGeocaching, PuntoGeolocalizable } from '../../clases/index';
 
@@ -439,9 +439,20 @@ export class JuegoComponent implements OnInit {
     console.log(' tengo tipo ' + this.tipoDeJuegoSeleccionado);
     if ((this.tipoDeJuegoSeleccionado === 'Juego De Cuestionario') && (this.modoDeJuegoSeleccionado === 'Equipos')) {
       Swal.fire('Alerta', 'Aún no es posible el juego de cuestionario en equipo', 'warning');
+
+
     } else if ((this.tipoDeJuegoSeleccionado === 'Juego De Avatares') && (this.modoDeJuegoSeleccionado === 'Equipos')) {
       Swal.fire('Alerta', 'Aún no es posible el juego de avatares en equipo', 'warning');
-    } else {
+      
+    } 
+
+
+    else if  ((this.tipoDeJuegoSeleccionado === 'Juego De Cuentos') && (this.modoDeJuegoSeleccionado === 'Equipos')) {
+      Swal.fire('Alerta', 'Aún no es posible el juego de libros en equipo', 'warning');
+
+    }
+    
+    else {
       if (this.modoDeJuegoSeleccionado === 'Individual') {
         if (this.alumnosGrupo === undefined) {
           Swal.fire('Alerta', 'No hay ningún alumno en este grupo', 'warning');
@@ -662,16 +673,36 @@ export class JuegoComponent implements OnInit {
 
     });
   }
+ ////////////////////////////////crear libro//////////////////////////////////////
+  
+ CrearJuegoLibro(){
+
+    const juego = new JuegoDeLibros(this.nombreDelJuego,
+      this.tipoDeJuegoSeleccionado,
+      this.modoDeJuegoSeleccionado,
+          true );
+
+      juego.descripción = this.myForm.value.descripcionlibro;
+      juego.Temporada = 'SI';
+    if (this.juego.Temporada == 'SI')
+    {}
+    if (this.juego.Temporada == 'NO')
+    {}   
+
+
+
+  }
+
 
   //// FUNCIONES PARA LA CREACION DE UN JUEGO DE AVATARES
   RecibeFamiliasElegidas($event) {
     this.familiasElegidas = $event;
     this.tengoFamilias = true;
-  }
-  CrearJuegoDeLibros(){
-
     
   }
+
+
+ 
 
   CrearJuegoDeAvatar( ) {
 

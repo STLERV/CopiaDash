@@ -1036,6 +1036,9 @@ public DameJuegoDeGeocaching(grupoId: number): Observable<Juego[]> {
       return this.http.post<JuegoDeAvatar>(this.APIUrlGrupos + '/' + grupoId + '/juegoDeAvatars', juego);
   }
 
+
+
+
   public BorraJuegoDeAvatar(juegoDeAvatarId: number): Observable<JuegoDeAvatar> {
     return this.http.delete<JuegoDeAvatar>(this.APIUrlJuegoDeAvatar + '/' + juegoDeAvatarId);
   }
@@ -1046,6 +1049,14 @@ public DameJuegoDeGeocaching(grupoId: number): Observable<Juego[]> {
   public DameJuegoDeAvatarGrupo(grupoId: number): Observable<Juego[]> {
     return this.http.get<Juego[]>(this.APIUrlGrupos + '/' + grupoId + '/juegoDeAvatars');
   }
+
+//////////////////////////////////// crear juego de libros ///////////////////////////////////////
+
+
+public CrearJuegoLibro(){}
+
+
+
 
   //////////////////////////////// GESTION DE ALUMNOS EN JUEGO DE AVATAR //////////////
 

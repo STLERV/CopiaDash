@@ -28,6 +28,7 @@ export * from './EquipoJuegoDeCompeticionLiga';
 export * from './AlumnoJuegoDeCompeticionFormulaUno';
 export * from './EquipoJuegoDeCompeticionFormulaUno';
 export * from './Album';
+export * from './JuegoDeLibros';
 export * from './AlbumEquipo';
 export * from './clasesParaTablasJuegoColeccion/AlbumDelAlumno';
 export * from './JuegoCompeticion';

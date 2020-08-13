@@ -246,17 +246,13 @@
                   <div> Descripción </div>
                 </ng-template>
 
-                  <mat-form-field>
+         
                     
-                  <label class="LabelStepper">Añadir alguna indicación para los alumnos</label>
-                    <input matInput formControlName="descripcionlibro" placeholder="Escriba aqui"
-                      requiered>
+              <div>
+                  <label class="LabelStepper">Añadir alguna indicación para los alumnos  <strong>naaaato</strong> </label>
+                  <mat-form-field>
+                    <input matInput formControlName="descripcionlibro" placeholder="Escriba aqui" requiered>
                   </mat-form-field>
-               
-                <div>
-
-             
-                 
                 </div>
 
                 <div class="btnCambiarStep">
@@ -264,6 +260,10 @@
                   <button type="button" class="btn Next" matStepperNext>Siguiente</button>
                 </div>
               </mat-step>
+
+
+
+
                 <mat-step>
                   <ng-template matStepLabel>
                     <div>Familias</div>
@@ -650,25 +650,21 @@
                 <!-- CUARTO PASO: ESTABLECER CRITERIO PARA OBTENER PRIVILEGIO DE CAMBIAR COMPLEMENTO 1 -->
 
                 <mat-step>
-                  <ng-template matStepLabel>
-                    <div>Complemento 1</div>
-                  </ng-template>
-
+                  <ng-template matStepLabel><div>Complemento 1</div></ng-template>
+  
                   <div>
-
-                    <label class="LabelStepper">Introduzca el criterio para obtener el privilegio de <strong>cambiar
-                        el primer complemento</strong></label>
-                    <mat-form-field>
-                      <input matInput formControlName="Temporada" placeholder="Inscribir el juego en la temporada actual?"
-                        requiered>
-                    </mat-form-field>
+  
+                      <label class = "LabelStepper">Introduzca el criterio para obtener el privilegio de  <strong>cambiar el primer complemento</strong></label>
+                      <mat-form-field>
+                        <input matInput formControlName="criterioPrivilegioComplemento1" placeholder="Escriba el criterio" requiered>
+                      </mat-form-field>
                   </div>
-
+  
                   <div class="btnCambiarStep">
                     <button type="button" class="btn Back" matStepperPrevious>Atrás</button>
                     <button type="button" class="btn Next" matStepperNext>Siguiente</button>
                   </div>
-                </mat-step>
+            </mat-step>
 
                 <!-- QUINTO PASO: ESTABLECER CRITERIO PARA OBTENER PRIVILEGIO DE CAMBIAR COMPLEMENTO 2 -->
 

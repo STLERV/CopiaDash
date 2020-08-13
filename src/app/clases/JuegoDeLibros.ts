@@ -1,4 +1,5 @@
 export class JuegoDeLibros {
+  
     NombreJuego: string;
     Tipo: string;
     Modo: string;
