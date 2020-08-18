@@ -10,7 +10,7 @@ import { Profesor, Grupo, Alumno, Matricula, Juego, Punto, Nivel, AlumnoJuegoDeP
         Album, AlbumEquipo, Insignia, AlumnoJuegoDeCompeticionLiga, EquipoJuegoDeCompeticionLiga,
         Jornada, EnfrentamientoLiga, Pregunta,  PreguntaDelCuestionario, Cuestionario, AlumnoJuegoDeCompeticionFormulaUno,
         EquipoJuegoDeCompeticionFormulaUno, SesionClase, AsistenciaClase, FamiliaAvatares, JuegoDeAvatar,
-        AlumnoJuegoDeAvatar, JuegoDeCuestionario, AlumnoJuegoDeCuestionario} from '../clases/index';
+        AlumnoJuegoDeAvatar, AlumnoJuegoDeLibro, JuegoDeLibros, JuegoDeCuestionario, AlumnoJuegoDeCuestionario} from '../clases/index';
 import { Escenario } from '../clases/Escenario';
 import { PuntoGeolocalizable } from '../clases/PuntoGeolocalizable';
 import { JuegoDeGeocaching } from '../clases/JuegoDeGeocaching';
@@ -988,6 +988,17 @@ public DameJuegoDeGeocaching(grupoId: number): Observable<Juego[]> {
 
 
 
+///////////////////////////////////// GESTION COSAS DE LIBROS/////////////////////////////////////
+
+public InscribeAlumnojuegoDelibro(alumnoJuegoDeLibro: AlumnoJuegoDeLibro){
+
+  
+}
+public crearjuegolibro(juego: JuegoDeLibros, grupoId: number) {
+
+
+}
+
 
 
 
@@ -1050,10 +1061,9 @@ public DameJuegoDeGeocaching(grupoId: number): Observable<Juego[]> {
     return this.http.get<Juego[]>(this.APIUrlGrupos + '/' + grupoId + '/juegoDeAvatars');
   }
 
-//////////////////////////////////// crear juego de libros ///////////////////////////////////////
 
 
-public CrearJuegoLibro(){}
+
 
 
 

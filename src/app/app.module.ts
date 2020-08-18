@@ -193,6 +193,7 @@ import { MostrarAvatarAlumnoComponent } from './paginas/juego-seleccionado-activ
 // tslint:disable-next-line:max-line-length
 import { InformacionJuegoAvatarComponent } from './paginas/juego-seleccionado-activo/juego-de-avatar-seleccionado-activo/informacion-juego-avatar/informacion-juego-avatar.component';
 import { MenuRecursosComponent } from './paginas/menu-recursos/menu-recursos.component';
+import { JuegoDeCuentoActivoComponent } from './paginas/juego-seleccionado-activo/juego-de-cuento-activo/juego-de-cuento-activo.component';
 
 
 @NgModule({
@@ -301,7 +302,8 @@ import { MenuRecursosComponent } from './paginas/menu-recursos/menu-recursos.com
     InformacionJuegoDeGeocachingDialogComponent,
     JuegoDeGeocachingSeleccionadoActivoComponent,
     JuegoDeGeocachingSeleccionadoInactivoComponent,
-    MenuRecursosComponent
+    MenuRecursosComponent,
+    JuegoDeCuentoActivoComponent
 
 
 

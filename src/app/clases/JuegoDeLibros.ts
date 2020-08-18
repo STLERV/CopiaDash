@@ -4,7 +4,7 @@ export class JuegoDeLibros {
     Tipo: string;
     Modo: string;
     JuegoActivo: boolean;
-    Familias: number[];
+    Familias: string[];
     Temporada: string;
     id: number;
     grupoId: number;

@@ -249,7 +249,7 @@
          
                     
               <div>
-                  <label class="LabelStepper">Añadir alguna indicación para los alumnos  <strong>naaaato</strong> </label>
+                  <label class="LabelStepper">Añadir alguna indicación para los alumnos   </label>
                   <mat-form-field>
                     <input matInput formControlName="descripcionlibro" placeholder="Escriba aqui" requiered>
                   </mat-form-field>
@@ -261,8 +261,9 @@
                 </div>
               </mat-step>
 
-
-
+              <!-- //////////////////////////////////// -->
+      
+<!-- ///////////////////////////////////////// -->
 
                 <mat-step>
                   <ng-template matStepLabel>
@@ -291,8 +292,8 @@
 
                     <label class="LabelStepper">Inscribir el juego en la temporada actual</label>
                
-                      <button type="button" class="btn Back">SI </button>
-                      <button type="button" class="btn Next"> NO</button>
+                      <button type="button" class="btn Next" (click)="inscribir(1)">SI </button>
+                      <button type="button" class="btn Back" (click)="inscribir(2)"> NO</button>
                    
                   </div>
 
@@ -312,7 +313,7 @@
                     {{tipoJuegoCompeticionSeleccionado}} ... {{modoDeJuegoSeleccionado}} </span>
                   <div class="btnCambiarStep">
                     <button type="button" class="btn Back" matStepperPrevious>Atrás</button>
-                    <button style="width: 60%" type="button" class="btn Aceptar" (click)="CrearJuegoDeLibros()">Crear
+                    <button style="width: 60%" type="button" class="btn Aceptar" (click)="CrearJuegoLibro()">Crear
                       juego de Libros</button>
                   </div>
                 </mat-step>
