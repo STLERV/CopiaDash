@@ -687,14 +687,9 @@ export class JuegoComponent implements OnInit {
       this.tipoDeJuegoSeleccionado,
       this.modoDeJuegoSeleccionado,
       true);
-
     juego.descripción = this.myForm.value.descripcionlibro;
-
-
-
-
+    juego.Temporada = 'SI';
     if (this.inscribirtemporada == '1') {
-
 
     }
     if (this.inscribirtemporada == '2') {
@@ -702,38 +697,38 @@ export class JuegoComponent implements OnInit {
     }
 
     this.peticionesAPI.crearjuegolibro(juego, this.grupo.id)
-      // .subscribe(nuevoJuego => {
-      //   this.juegoDeLibro = nuevoJuego;
-      //   // Ahora inscribimos en el juego a los participantes
-      //   if (this.modoDeJuegoSeleccionado === 'Individual') {
+      .subscribe(juego => {
+        this.juegoDeLibro = juego;
+        
+        if (this.modoDeJuegoSeleccionado === 'Individual') {
 
-      //     console.log('Voy a inscribir a los alumnos del grupo');
-      //     // tslint:disable-next-line:max-line-length
-      //     if (this.modoDeJuegoSeleccionado === 'Individual') {
-      //       console.log('Voy a inscribir a los alumnos del grupo');
-      //       // tslint:disable-next-line:prefer-for-of
-      //       for (let i = 0; i < this.alumnosGrupo.length; i++) {
-      //         // tslint:disable-next-line:max-line-length
-      //         console.log('inscribo');
-      //         this.peticionesAPI.InscribeAlumnojuegoDelibro(new AlumnoJuegoDeLibro(this.alumnosGrupo[i].id, this.juegoDeLibro.id))
-      //           .subscribe();
-      //       }
-      //     } else {
+         console.log('Voy a inscribir a los alumnos del grupo');
+          // tslint:disable-next-line:max-line-length
+          if (this.modoDeJuegoSeleccionado === 'Individual') {
+            console.log('Voy a inscribir a los alumnos del grupo');
+            // tslint:disable-next-line:prefer-for-of
+            for (let i = 0; i < this.alumnosGrupo.length; i++) {
+              // tslint:disable-next-line:max-line-length
+              console.log('inscribo');
+              this.peticionesAPI.InscribeAlumnojuegoDelibro(new AlumnoJuegoDeLibro(this.alumnosGrupo[i].id, this.juegoDeLibro.id))
+                .subscribe();
+            }
+          } else {
            
-      //     }
-      //     Swal.fire('Juego de libro creado correctamente', ' ', 'success');
+          }
+          Swal.fire('Juego de libro creado correctamente', ' ', 'success');
 
       
-      //     if (this.juegosActivos === undefined) {
+          if (this.juegosActivos === undefined) {
            
-      //       this.juegosActivos = [];
-      //     }
-      //     this.juegosActivos.push(this.juegoDeLibro);
-      //     this.Limpiar();
+            this.juegosActivos = [];
+          }
+          this.juegosActivos.push(this.juegoDeLibro);
+          this.Limpiar();
           
-      //     this.tabGroup.selectedIndex = 0;
-      //   }
-      // });
+          this.tabGroup.selectedIndex = 0;
+        }
+      });
   }
 
 

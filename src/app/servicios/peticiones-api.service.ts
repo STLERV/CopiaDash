@@ -82,6 +82,8 @@ export class PeticionesAPIService {
   private APIUrlJuegoDeAvatar = this.host + ':3000/api/juegosDeAvatar';
   private APIUrlAlumnoJuegoDeAvatar = this.host + ':3000/api/alumnosJuegoAvatar';
 
+  private APIUrlAlumnoJuegoDeLibro = this.host + ':3000/api/alumnojuegodecuento';
+
 
   private APIUrlEscenarios = this.host + ':3000/api/Escenarios';
   private APIUrlPuntosGeolocalizables = this.host + ':3000/api/PuntosGeolocalizables';
@@ -991,12 +993,13 @@ public DameJuegoDeGeocaching(grupoId: number): Observable<Juego[]> {
 ///////////////////////////////////// GESTION COSAS DE LIBROS/////////////////////////////////////
 
 public InscribeAlumnojuegoDelibro(alumnoJuegoDeLibro: AlumnoJuegoDeLibro){
-
+  return this.http.post<AlumnoJuegoDeLibro>(this.APIUrlAlumnoJuegoDeLibro,
+    alumnoJuegoDeLibro);
   
 }
 public crearjuegolibro(juego: JuegoDeLibros, grupoId: number) {
 
-
+  return this.http.post<JuegoDeLibros>(this.APIUrlGrupos + '/' + grupoId + '/juegodelibro', juego);
 }
 
 
