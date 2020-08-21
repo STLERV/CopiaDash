@@ -194,6 +194,7 @@ import { MostrarAvatarAlumnoComponent } from './paginas/juego-seleccionado-activ
 import { InformacionJuegoAvatarComponent } from './paginas/juego-seleccionado-activo/juego-de-avatar-seleccionado-activo/informacion-juego-avatar/informacion-juego-avatar.component';
 import { MenuRecursosComponent } from './paginas/menu-recursos/menu-recursos.component';
 import { JuegoDeCuentoActivoComponent } from './paginas/juego-seleccionado-activo/juego-de-cuento-activo/juego-de-cuento-activo.component';
+import { JuegoDeCuentoSeleccionadoActivoComponent } from './paginas/juego-seleccionado-activo/juego-de-cuento-seleccionado-activo/juego-de-cuento-seleccionado-activo.component';
 
 
 @NgModule({
@@ -303,7 +304,8 @@ import { JuegoDeCuentoActivoComponent } from './paginas/juego-seleccionado-activ
     JuegoDeGeocachingSeleccionadoActivoComponent,
     JuegoDeGeocachingSeleccionadoInactivoComponent,
     MenuRecursosComponent,
-    JuegoDeCuentoActivoComponent
+    JuegoDeCuentoActivoComponent,
+    JuegoDeCuentoSeleccionadoActivoComponent
 
 
 

@@ -1003,6 +1003,9 @@ public crearjuegolibro(juego: JuegoDeLibros, grupoId: number) {
 }
 
 
+ public DamejuegosdeCuento (grupoId: number): Observable<Juego[]> {
+  return this.http.get<Juego[]>(this.APIUrlGrupos + '/' + grupoId + '/juegodelibro');
+}
 
 
 

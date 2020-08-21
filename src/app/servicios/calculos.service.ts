@@ -422,6 +422,29 @@ export class CalculosService {
                   juegosInactivos.push(juegosCompeticionFormulaUno[i]);
                 }
               }
+
+     // ahora toca los juegos de competicion de formula uno
+     console.log ('vamos a por los juegos de cuento del grupo: ' + grupoID);
+     this.peticionesAPI.DamejuegosdeCuento(grupoID)
+     .subscribe(juegosdecuento => {
+       console.log('He recibido los juegos de cuento');
+       console.log(juegosdecuento);
+       // tslint:disable-next-line:prefer-for-of
+       for (let i = 0; i < juegosdecuento.length; i++) {
+         if (juegosdecuento[i].JuegoActivo === true) {
+           juegosActivos.push(juegosdecuento[i]);
+         } else {
+           juegosInactivos.push(juegosdecuento[i]);
+         }
+       }
+
+
+
+
+
+
+
+              
               console.log ('vamos a por los juegos de avatar del grupo: ' + grupoID);
               this.peticionesAPI.DameJuegoDeAvatarGrupo(grupoID)
               .subscribe(juegosAvatar => {
@@ -485,6 +508,7 @@ export class CalculosService {
         });
       });
     });
+  });
 
     return listasObservables;
   }
